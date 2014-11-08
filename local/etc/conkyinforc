@@ -1,0 +1,39 @@
+alignment top_left
+use_xft yes
+background yes
+xftfont Terminus:size=9
+gap_x 1300
+gap_y 460
+double_buffer yes
+update_interval 1
+draw_borders no
+draw_shades 0
+no_buffers yes
+own_window yes
+own_window_class conky-semi
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_type normal
+own_window_transparent yes
+own_window_argb_visual yes
+out_to_console no
+out_to_stderr no
+
+TEXT
+${color white}system
+${color lightblue}${hr}
+${color lightblue}${alignr 5} ${nodename} / ${kernel}
+up: ${alignr 5} ${uptime}
+cpu: ${alignr 5} ${cpu}% usage
+mem: ${alignr 5} ${mem} / ${memmax} ${membar 6,120}
+bat: ${alignr 5} ${battery BAT1}
+
+${color white}disk
+${color lightblue}${hr}
+${fs_used /} / ${fs_size /} ${fs_bar 6,160 /}
+
+${color white}network
+${color lightblue}${hr}
+wlan0 down: ${alignr 5} ${downspeed wlan0}
+wlan0 up: ${alignr 5} ${upspeed wlan0}
+eth0 down: ${alignr 5} ${downspeed eth0}
+eth0 up: ${alignr 5} ${upspeed eth0}

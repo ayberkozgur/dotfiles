@@ -1,0 +1,25 @@
+background yes
+cpu_avg_samples 2
+double_buffer yes
+use_xft no
+update_interval 0.5
+draw_borders no
+draw_shades no
+draw_outline no
+draw_graph_borders yes
+no_buffers yes
+own_window yes
+own_window_class Conky
+own_window_hints undecorated,above,sticky,skip_taskbar,skip_pager
+own_window_type normal
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 150
+out_to_console no
+out_to_stderr no
+
+border_inner_margin 0
+border_outer_margin 0
+
+TEXT
+${cpugraph 25,245 0000ff 3333ff} ${memgraph 25,245 00ff00 33ff33} ${diskiograph 25,245 ffff00 ffff33} ${downspeedgraph eth0 25,155 ff0000 ff3333} ${upspeedgraph eth0 25,155 ff00ff ff33ff}
