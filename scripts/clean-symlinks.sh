@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#Get necessary paths
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+BASEPATH=$(readlink -f "$SCRIPTPATH/../")
+
+#Clean all symlinks
+cd "$BASEPATH" && find . -type f -not -path "./scripts/*" | while read DOTFILE
+do
+    SOURCEFILE=$(readlink -f "$BASEPATH/$DOTFILE")
+    TARGETFILE="$HOME/dotfiles/.${DOTFILE:2:${#DOTFILE}}" # *************REMOVE dotfiles
+    TARGETDIR=$(dirname "$TARGETFILE")
+    if [ "$(readlink -f "$TARGETFILE")" == "$SOURCEFILE" ]
+    then
+        echo $0": Removing target symlink "$TARGETFILE
+        rm "$TARGETFILE"
+        rmdir --ignore-fail-on-non-empty -p "$TARGETDIR"
+    else
+        echo $0": Not removing target "$TARGETFILE", points to something else, not a symlink or does not exist"
+    fi
+done
+
