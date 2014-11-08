@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Color output
+INITCMD="\e[0;94m$0\e[0m"
+
 #Get necessary paths
 SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
@@ -14,11 +17,11 @@ do
 
     if [ "$(readlink -f "$TARGETFILE")" == "$SOURCEFILE" ]
     then
-        echo "$0: Removing target symlink $TARGETFILE"
+        echo -e "$INITCMD: Removing target symlink $TARGETFILE"
         rm "$TARGETFILE"
         rmdir --ignore-fail-on-non-empty -p "$TARGETDIR"
     else
-        echo "$0: Not removing target $TARGETFILE, points to something else, not a symlink or does not exist"
+        echo -e "$INITCMD: Not removing target $TARGETFILE, points to something else, not a symlink or does not exist"
     fi
 done
 
