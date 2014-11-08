@@ -2,7 +2,7 @@
 #Shell stuff
 ###############################################################################
 
-#Distable CTRL+S in terminal
+#Disable CTRL+S in terminal
 stty -ixon
 
 #cdsrc to go to /usr/local/src/
@@ -12,8 +12,8 @@ alias cdsrc='cd /usr/local/src/'
 alias cdshare='cd /usr/local/share/'
 
 #Qt sourcing
-alias source-qt-android='source ~/.qt-android-setup.bash'
-alias source-qt-desktop='source ~/.qt-desktop-setup.bash'
+alias qtandroidsetup='source ~/.local/etc/qtandroidrc'
+alias qtdesktopsetup='source ~/.local/etc/qtdesktoprc'
 
 ###############################################################################
 #Environment variables
