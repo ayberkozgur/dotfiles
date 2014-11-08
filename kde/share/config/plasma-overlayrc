@@ -1,0 +1,10 @@
+[DownloadDialog Settings]
+Height 900=400
+Width 1600=700
+
+[KFileDialog Settings][$i]
+Height 1200=450
+Height 900[$i]=450
+Recent Files[$ie]=Mass_Effect_2_Citadel_by_droot1986.jpg,$HOME/Pictures/Mass_Effect_2_Citadel_by_droot1986.jpg
+Recent URLs[$ie]=$HOME/Pictures/
+Width 1600[$i]=800

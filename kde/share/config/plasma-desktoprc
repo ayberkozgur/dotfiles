@@ -1,0 +1,138 @@
+[BackgroundConfigDialog]
+Height 900=719
+Width 1600=751
+
+[KFileDialog Settings]
+Height 1200=450
+Height 1920=450
+Height 900=450
+Recent Files[$e]=Mass_Effect_2_Citadel_by_droot1986.jpg,$HOME/pic/space-stars-cosmic-nebula-1920x1080_edit.jpg,$HOME/pic/space-stars-cosmic-nebula-1920x1080.jpg,$HOME/pic/best-free-wallpapers-for-desktop-10.jpg,$HOME/pic/Mass_Effect_2_Citadel_by_droot1986.jpg
+Recent URLs[$e]=remote:/,$HOME/pic/
+Width 1200=800
+Width 1600=1031
+
+[KPropertiesDialog]
+Height 1080=374
+Height 1200=399
+Height 900=399
+Width 1600=405
+Width 1920=277
+
+[Open-with settings]
+CompletionMode=5
+History=/bin/sh,inkscape,kate
+
+[PlasmaViews][1]
+panelVisibility=0
+
+[PlasmaViews][1][Horizontal1600]
+offset=0
+
+[PlasmaViews][1][Horizontal1920]
+offset=0
+
+[PlasmaViews][1][Horizontal3200]
+offset=0
+
+[PlasmaViews][1][Sizes]
+lastsize=1600
+
+[PlasmaViews][1][Sizes][Horizontal1024]
+max=1024,35
+min=1024,35
+offset=0
+size=1024,35
+
+[PlasmaViews][1][Sizes][Horizontal1152]
+max=1152,35
+min=1152,35
+offset=0
+size=1152,35
+
+[PlasmaViews][1][Sizes][Horizontal1440]
+max=1440,35
+min=1440,35
+offset=0
+size=1440,35
+
+[PlasmaViews][1][Sizes][Horizontal1600]
+max=-1,-1
+min=-1,-1
+offset=0
+size=1920,35
+
+[PlasmaViews][1][Sizes][Horizontal1920]
+max=-1,-1
+min=-1,-1
+offset=0
+size=1920,35
+
+[PlasmaViews][1][Sizes][Horizontal2464]
+max=2464,35
+min=2464,35
+offset=0
+size=2464,35
+
+[PlasmaViews][1][Sizes][Horizontal2880]
+max=2880,35
+min=2880,35
+offset=0
+size=2880,35
+
+[PlasmaViews][1][Sizes][Horizontal3200]
+max=3200,35
+min=3200,35
+offset=0
+size=3200,35
+
+[PlasmaViews][1][Sizes][Horizontal640]
+max=640,35
+min=640,35
+offset=0
+size=640,35
+
+[Updates]
+performed=/usr/share/kubuntu-default-settings/kde4-profile/default/share/apps/plasma-desktop/updates/01-kubuntu-10.04.js,/usr/share/kubuntu-default-settings/kde4-profile/default/share/apps/plasma-desktop/updates/04-add-presence.js,/usr/share/kubuntu-default-settings/kde4-profile/default/share/apps/plasma-desktop/updates/02-kubuntu-menu-icon.js,/usr/share/kubuntu-default-settings/kde4-profile/default/share/apps/plasma-desktop/updates/01-rename-plasma-nm.js,/usr/share/kde4/apps/plasma-desktop/updates/02-add-print-manager.js,/usr/share/kde4/apps/plasma-desktop/updates/50-renameKTpApplets.js,/usr/share/kde4/apps/plasma-desktop/updates/set-hidden-single-vd-pager.js,/usr/share/kde4/apps/plasma-desktop/updates/systray-to-notifications-widget.js,/usr/share/kde4/apps/plasma-desktop/updates/addShowActivitiesManagerPlasmoid.js
+
+[ViewIds]
+1=1
+18=4
+8=2
+
+[invokeAction]
+__file=
+actionId=
+predicate=test-predicate-openinwindow.desktop
+
+[mount]
+__file=
+
+[requestShutDown]
+__file=
+
+[setBrightness]
+__file=
+brightness=100
+
+[stop]
+__file=
+
+[stopSuppressingScreenPowerManagement]
+__file=
+cookie=-1
+
+[stopSuppressingSleep]
+__file=
+cookie=-1
+
+[toggleActivityManager]
+__file=
+
+[unmount]
+__file=
+
+[updateFreespace]
+__file=
+
+[userClosed]
+__file=
