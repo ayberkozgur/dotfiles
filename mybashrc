@@ -1,0 +1,76 @@
+###############################################################################
+#Shell stuff
+###############################################################################
+
+#Distable CTRL+S in terminal
+stty -ixon
+
+#cdsrc to go to /usr/local/src/
+alias cdsrc='cd /usr/local/src/'
+
+#cdshare to go to /usr/local/share/
+alias cdshare='cd /usr/local/share/'
+
+#Qt sourcing
+alias source-qt-android='source ~/.qt-android-setup.bash'
+alias source-qt-desktop='source ~/.qt-desktop-setup.bash'
+
+###############################################################################
+#Environment variables
+###############################################################################
+
+#PATH
+export PATH=$PATH:/usr/local/share/android-sdk-linux/platform-tools/:/usr/local/share/android-sdk-linux/tools/
+
+#OpenNI2
+#export OPENNI2_INCLUDE=/opt/OpenNI-Linux-x64-2.2/Include
+#export OPENNI2_REDIST=/opt/OpenNI-Linux-x64-2.2/Redist
+
+#NiTE2
+#export NITE2_INCLUDE=/opt/NiTE-Linux-x64-2.2/Include
+#export NITE2_REDIST64=/opt/NiTE-Linux-x64-2.2/Redist
+
+#Java crap
+export JAVA_OPTS="-Xmx1024M -XX:PermSize=1024M -XX:MaxPermSize=1024M"
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+#export LD_LIBRARY_PATH=/usr/lib/:/usr/lib32/:/usr/lib64/:/usr/local/lib/:/usr/local/lib32/:/usr/local/lib64/
+
+#Android
+export ANDROID_HOME=/usr/local/share/android-sdk-linux
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export ANDROID_SDK=$ANDROID_SDK_ROOT
+export ANDROID_NDK_ROOT=/usr/local/share/android-ndk-r9d
+#export ANDROID_NDK=$ANDROID_NDK_ROOT
+export ANDROID_NDK_STANDALONE_TOOLCHAIN=/opt/android-toolchain
+export ANDROID_STANDALONE_TOOLCHAIN=$ANDROID_NDK_STANDALONE_TOOLCHAIN
+export ANDROID_ABI=armeabi-v7a
+export ANDROID_NATIVE_API_LEVEL=14
+export ANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-4.8
+
+export PATH=$PATH:$NADROID_NDK_STANDALONE_TOOLCHAIN/bin
+
+#OpenCV
+export OpenCV_DIR=/opt/android-toolchain/sysroot/usr/share/opencv/sdk/native/jni/
+
+###############################################################################
+#Git branch display
+###############################################################################
+
+function get_git_branch { 
+	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\[\1\]\ /' 
+}
+PS1="\$(get_git_branch)\u@\h:\w$ "
+
+###############################################################################
+#Source ROS
+###############################################################################
+
+#source ~/ros/hydro/install_isolated/setup.bash
+#source ~/catkinws/devel/setup.bash
+
+###############################################################################
+#ccache
+###############################################################################
+
+export USE_CCACHE=1
+
