@@ -1,8 +1,8 @@
 #!/bin/bash
 
 error_and_die(){
-     >&2 echo -e $1
-     exit 1
+    >&2 echo -e $1
+    exit 1
 }
 
 #Color output
@@ -19,17 +19,33 @@ then
     LNARG="-f"
 fi
 
+#Get all submodules
+echo -e "$INITCMD: Getting submodules..."
+git submodule update --init --recursive || exit 1
+echo -e "$INITCMD: Getting submodules...done."
+
 #Install all dotfiles as symlinks
 echo -e "$INITCMD: Installing dotfiles..."
-cd "$BASEPATH" && find . -type f -not -path "./scripts/*" -not -path "./.git/*" -not -name ".gitignore" -not -name ".gitmodules" -not -name "README.md" | while read DOTFILE
+cd "$BASEPATH" && find . -type f -not -path "./vim/*" -not -path "./scripts/*" -not -path "./.git/*" -not -name ".gitignore" -not -name ".gitmodules" -not -name "README.md" | while read DOTFILE
 do
     SOURCEFILE=$(readlink -f "$BASEPATH/$DOTFILE")
-    TARGETFILE="$HOME/dotfiles/.${DOTFILE:2:${#DOTFILE}}" # *************REMOVE dotfiles
+    TARGETFILE="$HOME/.${DOTFILE:2:${#DOTFILE}}"
     TARGETDIR=$(dirname "$TARGETFILE")
 
     echo -e "$INITCMD: Installing $SOURCEFILE to $TARGETFILE"
     mkdir -p "$TARGETDIR"
-    ln -s $LNARG "$SOURCEFILE" "$TARGETFILE" || error_and_die "$INITCMD: Installation failed; run as \`$0 -f\` to overwrite target files"
+    ln -s $LNARG "$SOURCEFILE" "$TARGETFILE"
+
+    #Check existence of the exact same link if we failed
+    if [ "$?" -ne "0" ]
+    then
+        if [ "$(readlink -f "$TARGETFILE")" == "$SOURCEFILE"  ]
+        then
+            echo -e "$INITCMD: Target file is already installed, skipping..."
+        else
+            error_and_die "$INITCMD: Installation failed; run as \`$0 -f\` to overwrite target files"
+        fi
+    fi
 done
 if [ "$?" -ne "0" ]; then exit 1; fi #The pipe in the loop introduces a subshell so we can't exit the whole script from inside the loop
 echo -e $INITCMD": Installing dotfiles...done."
@@ -53,3 +69,4 @@ fc-cache -vf ~/.fonts/ || exit 1
 echo -e "$INITCMD: Updating font cache...done."
 
 echo -e "$INITCMD: Installation complete."
+

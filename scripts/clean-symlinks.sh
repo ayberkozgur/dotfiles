@@ -9,10 +9,10 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 BASEPATH=$(readlink -f "$SCRIPTPATH/../")
 
 #Clean all symlinks
-cd "$BASEPATH" && find . -type f -not -path "./scripts/*" -not -path "./.git/*" -not -name ".gitignore" -not -name ".gitmodules" -not -name "README.md" | while read DOTFILE
+cd "$BASEPATH" && find . -type f -not -path "./vim/*" -not -path "./scripts/*" -not -path "./.git/*" -not -name ".gitignore" -not -name ".gitmodules" -not -name "README.md" | while read DOTFILE
 do
     SOURCEFILE=$(readlink -f "$BASEPATH/$DOTFILE")
-    TARGETFILE="$HOME/dotfiles/.${DOTFILE:2:${#DOTFILE}}" # *************REMOVE dotfiles
+    TARGETFILE="$HOME/.${DOTFILE:2:${#DOTFILE}}"
     TARGETDIR=$(dirname "$TARGETFILE")
 
     if [ "$(readlink -f "$TARGETFILE")" == "$SOURCEFILE" ]
