@@ -1,17 +1,11 @@
 #!/bin/bash
 
-error_and_die(){
-    >&2 echo -e $1
-    exit 1
-}
-
-#Color output
-INITCMD="\e[0;94m$0\e[0m"
-
-#Get necessary paths
+#Get script variables
 SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 BASEPATH=$(readlink -f "$SCRIPTPATH/../")
+INITCMD="\e[0;94m$0\e[0m"
+INITCMDERR="\e[0;31m$0\e[0m"
 
 #Get -f argument
 if [ "$1" == "-f" ]
@@ -19,10 +13,38 @@ then
     LNARG="-f"
 fi
 
+error_and_die(){
+    >&2 echo -e $1
+    exit 1
+}
+
 #Get all submodules
 echo -e "$INITCMD: Getting submodules..."
 git submodule update --init --recursive || exit 1
 echo -e "$INITCMD: Getting submodules...done."
+
+#Install vim runtime config
+echo -e "$INITCMD: Installing ~/.vim/ ..."
+SOURCEDIR=$(readlink -f "$BASEPATH/vim")
+TARGETDIR="$HOME/.vim"
+if [ -e "$TARGETDIR" ]
+then
+    if [ "$(readlink -f "$TARGETDIR")" == "$SOURCEDIR"  ]
+    then
+        echo -e "$INITCMD: ~/.vim/ is already installed, skipping."
+    elif [ "$LNARG" == "-f" ]
+    then
+        rm -rf "$TARGETDIR"
+        ln -s "$SOURCEDIR" "$TARGETDIR"
+    else
+        echo -e "$INITCMDERR: ~/.vim/ points to something else or not a symlink, not overwriting."
+        error_and_die "$INITCMDERR: Installation failed; run as \`$0 -f\` to overwrite target files"
+    fi
+else
+    ln -s "$SOURCEDIR" "$TARGETDIR"
+fi
+$HOME/.vim/install.sh $LNARG || exit 1
+echo -e "$INITCMD: Installing ~/.vim/ ...done."
 
 #Install all dotfiles as symlinks
 echo -e "$INITCMD: Installing dotfiles..."
@@ -41,9 +63,10 @@ do
     then
         if [ "$(readlink -f "$TARGETFILE")" == "$SOURCEFILE"  ]
         then
-            echo -e "$INITCMD: Target file is already installed, skipping..."
+            echo -e "$INITCMD: Target file is already installed, skipping."
         else
-            error_and_die "$INITCMD: Installation failed; run as \`$0 -f\` to overwrite target files"
+            echo -e "$INITCMDERR: Target file points to something else or not a symlink, not overwriting."
+            error_and_die "$INITCMDERR: Installation failed; run as \`$0 -f\` to overwrite target files"
         fi
     fi
 done
