@@ -20,6 +20,7 @@ error_and_die(){
 
 #Get all submodules
 echo -e "$INITCMD: Getting submodules..."
+cd "$BASEPATH"
 git submodule update --init --recursive || exit 1
 echo -e "$INITCMD: Getting submodules...done."
 
