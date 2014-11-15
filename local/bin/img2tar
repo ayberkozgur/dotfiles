@@ -1,0 +1,15 @@
+#!/bin/bash
+
+filename=$1
+extension="${filename##*.}"
+filename="${filename%.*}"
+tarfile=$filename".tar"
+
+if [ "$extension" != "img" ]
+then
+    echo "File must have extension .img"
+    exit 1
+fi
+
+tar -H ustar -c "$1" > "$tarfile" || exit 1
+

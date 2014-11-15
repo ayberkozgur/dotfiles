@@ -20,7 +20,7 @@ alias qtdesktopsetup='source ~/.local/etc/qtdesktoprc'
 ###############################################################################
 
 #PATH
-export PATH=$PATH:/usr/local/share/android-sdk-linux/platform-tools/:/usr/local/share/android-sdk-linux/tools/
+export PATH=$PATH:~/.local/bin/:/usr/local/share/android-sdk-linux/platform-tools/:/usr/local/share/android-sdk-linux/tools/
 
 #OpenNI2
 #export OPENNI2_INCLUDE=/opt/OpenNI-Linux-x64-2.2/Include
