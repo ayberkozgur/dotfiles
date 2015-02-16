@@ -8,20 +8,20 @@
 frame_maininfo=
 
 #d+ Name of the container it belongs to:
-Container=_MainDock_
+Container=2D
 
 #v
 sep_display=
 
 #s[Default] Launcher's name:
-Name=Android SDK Manager
+Name=
 
 #S+[Default] Image's name or path:
-Icon=~/.local/share/icons/hicolor/128x128/apps/android-sdk-manager.png
+Icon=
 
 #s[Default] Command to launch on click:
 #{Example: nautilus --no-desktop, gedit, etc. You can even enter a shortkey, e.g. <Alt>F1, <Ctrl>c,  <Ctrl>v, etc}
-Exec=/usr/local/share/android-sdk-linux/tools/android
+Exec=
 
 
 #X[Extra parameters]
@@ -33,7 +33,7 @@ prevent inhibate=false
 
 #K[Default] Class of the program:
 #{The only reason you may want to modify this parameter is if you made this launcher by hands. If you dropped it into the dock from the menu, it is nearly sure that you shouldn't touch it. It defines the class of the program, which is useful to link the application with its launcher.}
-StartupWMClass=android sdk manager
+StartupWMClass=
 
 #b Run in a terminal?
 Terminal=false
@@ -43,8 +43,8 @@ Terminal=false
 ShowOnViewport=0
 
 #f[0;100] Order you want for this launcher among the others:
-Order=9.875
+Order=3
 
 Icon Type=0
 Type=Application
-Origin=
+Origin=/usr/share/applications/kde4/krita.desktop
