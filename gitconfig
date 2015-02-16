@@ -35,3 +35,5 @@
 	
 [credential]
 	helper = cache
+[http]
+	cookiefile = /home/equilibrium/.gitcookies
