@@ -32,7 +32,7 @@ export PATH=$PATH:~/.local/bin/:/usr/local/share/android-sdk-linux/platform-tool
 
 #Java crap
 export JAVA_OPTS="-Xmx1024M -XX:PermSize=1024M -XX:MaxPermSize=1024M"
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 #export LD_LIBRARY_PATH=/usr/lib/:/usr/lib32/:/usr/lib64/:/usr/local/lib/:/usr/local/lib32/:/usr/local/lib64/
 
 #Android
@@ -65,8 +65,8 @@ PS1="\$(get_git_branch)\u@\h:\w$ "
 #Source ROS
 ###############################################################################
 
-#source ~/ros/hydro/install_isolated/setup.bash
-#source ~/catkinws/devel/setup.bash
+source /opt/ros/indigo/setup.bash
+source ~/catkin_ws/devel/setup.bash
 
 ###############################################################################
 #ccache
