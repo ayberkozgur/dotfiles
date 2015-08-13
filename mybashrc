@@ -32,20 +32,20 @@ export PATH=$PATH:~/.local/bin/:/usr/local/share/android-sdk-linux/platform-tool
 
 #Java crap
 export JAVA_OPTS="-Xmx1024M -XX:PermSize=1024M -XX:MaxPermSize=1024M"
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/
 #export LD_LIBRARY_PATH=/usr/lib/:/usr/lib32/:/usr/lib64/:/usr/local/lib/:/usr/local/lib32/:/usr/local/lib64/
 
 #Android
 export ANDROID_HOME=/usr/local/share/android-sdk-linux
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export ANDROID_SDK=$ANDROID_SDK_ROOT
-export ANDROID_NDK_ROOT=/usr/local/share/android-ndk-r9d
+export ANDROID_NDK_ROOT=/usr/local/share/android-ndk-r10e #r9d
 #export ANDROID_NDK=$ANDROID_NDK_ROOT
-export ANDROID_NDK_STANDALONE_TOOLCHAIN=/opt/android-toolchain
-export ANDROID_STANDALONE_TOOLCHAIN=$ANDROID_NDK_STANDALONE_TOOLCHAIN
+#export ANDROID_NDK_STANDALONE_TOOLCHAIN=/opt/android-toolchain
+#export ANDROID_STANDALONE_TOOLCHAIN=$ANDROID_NDK_STANDALONE_TOOLCHAIN
 export ANDROID_ABI=armeabi-v7a
 export ANDROID_NATIVE_API_LEVEL=14
-export ANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-4.8
+#export ANDROID_TOOLCHAIN_NAME=arm-linux-androideabi-4.8
 
 export PATH=$PATH:$NADROID_NDK_STANDALONE_TOOLCHAIN/bin
 
