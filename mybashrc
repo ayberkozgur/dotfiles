@@ -50,7 +50,9 @@ export ANDROID_NATIVE_API_LEVEL=14
 export PATH=$PATH:$NADROID_NDK_STANDALONE_TOOLCHAIN/bin
 
 #OpenCV
-export OpenCV_DIR=/opt/android-toolchain/sysroot/usr/share/opencv/sdk/native/jni/
+#export OpenCV_DIR=/opt/android-toolchain/sysroot/usr/share/opencv/sdk/native/jni/
+#export OpenCV_DIR=/usr/local/share/OpenCV/
+export OpenCV_DIR=/usr/share/OpenCV/
 
 ###############################################################################
 #Git branch display
