@@ -19,6 +19,8 @@ Width 1600=800
 
 [Shortcuts]
 close-session=none
+move-session-left=Ctrl+Shift+PgUp
+move-session-right=Ctrl+Shift+PgDown
 new-session=Ctrl+T
 next-session=Ctrl+PgDown
 previous-session=Ctrl+PgUp
