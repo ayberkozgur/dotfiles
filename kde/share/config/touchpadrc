@@ -6,6 +6,7 @@ KeyboardActivityTimeoutMs=500
 CircScrollDelta=5.73
 HorizScrollDelta=2.5
 MaxTapMove=4
+RBCornerButton=NoButton
 RTCornerButton=NoButton
 ThreeFingerTapButton=MiddleButton
 VertScrollDelta=2.5
