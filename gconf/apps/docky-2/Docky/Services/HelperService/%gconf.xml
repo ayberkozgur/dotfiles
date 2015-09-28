@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="zeitgeist_menus_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="zeitgeist_journal_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="workrave_helper_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="tsclient_menus_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="transmission_badge_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="tomboy_menus_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="skype_control_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="rhythmbox_control_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="pithos_control_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="pidgin_control_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="open_terminal_here_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="mpd_control_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="liferea_badge_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="gtg_menus_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="gajim_badge_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="emesene_control_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="deluge_badge_py" mtime="1443348703" type="bool" value="false"/>
+	<entry name="banshee_control_py" mtime="1443348703" type="bool" value="false"/>
+</gconf>
