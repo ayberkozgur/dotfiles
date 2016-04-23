@@ -7,7 +7,6 @@ To install:
 
 ```
 git clone --recursive git@github.com:ayberkozgur/dotfiles.git ~/.dotfiles
-sudo ~/.dotfiles/vim/install-deps.sh
 ~/.dotfiles/scripts/install.sh
 ```
 

@@ -51,29 +51,6 @@ done
 if [ "$?" -ne "0" ]; then exit 1; fi #The pipe in the loop introduces a subshell so we can't exit the whole script from inside the loop
 echo -e $INITCMD": Installing dotfiles...done."
 
-#Install vim runtime config
-echo -e "$INITCMD: Installing ~/.vim/ ..."
-SOURCEDIR=$(readlink -f "$BASEPATH/vim")
-TARGETDIR="$HOME/.vim"
-if [ -e "$TARGETDIR" ]
-then
-    if [ "$(readlink -f "$TARGETDIR")" == "$SOURCEDIR"  ]
-    then
-        echo -e "$INITCMD: ~/.vim/ is already installed, skipping."
-    elif [ "$LNARG" == "-f" ]
-    then
-        rm -rf "$TARGETDIR"
-        ln -s "$SOURCEDIR" "$TARGETDIR"
-    else
-        echo -e "$INITCMDERR: ~/.vim/ points to something else or not a symlink, not overwriting."
-        error_and_die "$INITCMDERR: Installation failed; run as \`$0 -f\` to overwrite target files"
-    fi
-else
-    ln -s "$SOURCEDIR" "$TARGETDIR"
-fi
-$HOME/.vim/install.sh $LNARG || exit 1
-echo -e "$INITCMD: Installing ~/.vim/ ...done."
-
 #Set up our bashrc
 echo -e $INITCMD": Appending .mybashrc..."
 if ! grep -Fxq "source ~/.mybashrc" ~/.bashrc
