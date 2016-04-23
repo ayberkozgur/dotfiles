@@ -26,6 +26,7 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
     pullr = !git fetch && git rebase --autostash FETCH_HEAD
+    diffs = diff --staged
     dif = diff --color-words
     difs = diff --color-words --staged
     unstage = reset HEAD
