@@ -3,6 +3,7 @@
     name = ayberkozgur
 [core]
     editor = vim
+	pager = less -r
 [color]
     ui = auto
 [color "branch"]
@@ -25,6 +26,9 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
     pullr = !git fetch && git rebase --autostash FETCH_HEAD
+    dif = diff --color-words
+    difs = diff --color-words --staged
+    unstage = reset HEAD
 
     # Show files ignored by git:
     ign = ls-files -o -i --exclude-standard
