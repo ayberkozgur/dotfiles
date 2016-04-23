@@ -73,8 +73,8 @@ PS1="\$(get_git_branch)\u@\h:\w$ "
 #Source ROS
 ###############################################################################
 
-source /opt/ros/indigo/setup.bash
-source ~/catkin_ws/devel/setup.bash
+#source /opt/ros/indigo/setup.bash
+#source ~/catkin_ws/devel/setup.bash
 
 ###############################################################################
 #ccache
