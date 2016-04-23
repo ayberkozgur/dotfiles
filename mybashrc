@@ -15,6 +15,12 @@ alias cdshare='cd /usr/local/share/'
 alias qtandroidsetup='source ~/.local/etc/qtandroidrc'
 alias qtdesktopsetup='source ~/.local/etc/qtdesktoprc'
 
+#markdown viewer
+md() {
+    local TMPFILE=$(mktemp)
+    markdown "$*" > $TMPFILE && ( xdg-open $TMPFILE > /dev/null 2>&1 & )
+}
+
 ###############################################################################
 #Environment variables
 ###############################################################################
