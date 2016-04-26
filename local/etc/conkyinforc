@@ -2,8 +2,8 @@ alignment top_left
 use_xft yes
 background yes
 xftfont Terminus:size=9
-gap_x 1300
-gap_y 460
+gap_x 1278
+gap_y 540
 double_buffer yes
 update_interval 1
 draw_borders no
@@ -22,18 +22,14 @@ TEXT
 ${color white}system
 ${color lightblue}${hr}
 ${color lightblue}${alignr 5} ${nodename} / ${kernel}
-up: ${alignr 5} ${uptime}
+uptime: ${alignr 5} ${uptime}
 cpu: ${alignr 5} ${cpu}% usage
 mem: ${alignr 5} ${mem} / ${memmax} ${membar 6,120}
 bat: ${alignr 5} ${battery BAT1}
 
-${color white}disk
-${color lightblue}${hr}
-${fs_used /} / ${fs_size /} ${fs_bar 6,160 /}
-
 ${color white}network
 ${color lightblue}${hr}
-wlan0 down: ${alignr 5} ${downspeed wlan0}
-wlan0 up: ${alignr 5} ${upspeed wlan0}
-eth0 down: ${alignr 5} ${downspeed eth0}
-eth0 up: ${alignr 5} ${upspeed eth0}
+wlan0 down: ${alignr 5} ${downspeed wlp1s0}
+wlan0 up: ${alignr 5} ${upspeed wlp1s0}
+eth0 down: ${alignr 5} ${downspeed enp2s0}
+eth0 up: ${alignr 5} ${upspeed enp2s0}
