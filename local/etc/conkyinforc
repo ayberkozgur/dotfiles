@@ -3,7 +3,7 @@ use_xft yes
 background yes
 xftfont Terminus:size=9
 gap_x 1278
-gap_y 540
+gap_y 485
 double_buffer yes
 update_interval 1
 draw_borders no
@@ -21,15 +21,22 @@ out_to_stderr no
 TEXT
 ${color white}system
 ${color lightblue}${hr}
-${color lightblue}${alignr 5} ${nodename} / ${kernel}
-uptime: ${alignr 5} ${uptime}
-cpu: ${alignr 5} ${cpu}% usage
-mem: ${alignr 5} ${mem} / ${memmax} ${membar 6,120}
+${color lightblue}${alignr 5}${nodename} / ${kernel}
+uptime:${alignr 5}${uptime}
 bat: ${alignr 5} ${battery BAT1}
 
-${color white}network
+${color white}top cpu                                                          %
 ${color lightblue}${hr}
-wlan0 down: ${alignr 5} ${downspeed wlp1s0}
-wlan0 up: ${alignr 5} ${upspeed wlp1s0}
-eth0 down: ${alignr 5} ${downspeed enp2s0}
-eth0 up: ${alignr 5} ${upspeed enp2s0}
+${top name 1}${alignr 5}${top cpu 1}
+${top name 2}${alignr 5}${top cpu 2}
+${top name 3}${alignr 5}${top cpu 3}
+${top name 4}${alignr 5}${top cpu 4}
+${top name 5}${alignr 5}${top cpu 5}
+
+${color white}top mem
+${color lightblue}${hr}
+${top_mem name 1}${alignr 5}${top_mem mem_res 1}
+${top_mem name 2}${alignr 5}${top_mem mem_res 2}
+${top_mem name 3}${alignr 5}${top_mem mem_res 3}
+${top_mem name 4}${alignr 5}${top_mem mem_res 4}
+${top_mem name 5}${alignr 5}${top_mem mem_res 5}
